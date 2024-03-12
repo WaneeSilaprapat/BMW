@@ -16,8 +16,7 @@ st.title("Supplier-List")
 
 # Read the CSV file
 #df = pd.read_csv('path')
-df = pd.read_csv("C:\\Users\\Iliyah\\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\\ปี 3 เทอม 2\\intern\\BMW\\BMW\\Supplier-List.csv"
-, encoding='utf-8')
+df = pd.read_csv("Supplier-List.csv" , encoding='utf-8')
 
 # Display the DataFrame
 st.write(df)
