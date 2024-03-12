@@ -5,20 +5,22 @@ import altair as alt
 import plotly.express as px
 
 
+
 st.title("Supplier-List")
 
-# Specify the file path with escaped backslashes
-path = "C:\\Users\\Iliyah\\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\\ปี 3 เทอม 2\\intern\\BMW\\BMW\\Supplier-List.csv"
+
+#path = "C:\\Users\\Iliyah\\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\\ปี 3 เทอม 2\\intern\\BMW\\BMW\\Supplier-List.csv"
+
+
+
 
 # Read the CSV file
-df = pd.read_csv(path)
+#df = pd.read_csv('path')
+df = pd.read_csv("C:\\Users\\Iliyah\\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\\ปี 3 เทอม 2\\intern\\BMW\\BMW\\Supplier-List.csv"
+, encoding='utf-8')
 
 # Display the DataFrame
 st.write(df)
-
-
-
-df = pd.read_csv(path)
 
 
 # Count occurrences of each country
@@ -44,14 +46,7 @@ chart = alt.Chart(country_counts).mark_bar().encode(
 # Display the chart in Streamlit
 st.altair_chart(chart, use_container_width=True)
 
-#*****************************************************************************************************************
 
-
-
-
-
-
-df = pd.read_csv(path)
 
 # Count occurrences of each country
 country_counts = df['Country RA'].value_counts().reset_index()
@@ -64,7 +59,6 @@ fig = px.pie(country_counts, values='Count', names='Country RA', title='Number o
 st.plotly_chart(fig, use_container_width=True)
 
 
-
 Nationality_counts = df['Nationality'].value_counts().reset_index()
 Nationality_counts.columns = ['Nationality', 'Count']
 
@@ -73,10 +67,6 @@ fig = px.pie(Nationality_counts, values='Count', names='Nationality', title='Num
 
 # Display the pie chart in Streamlit
 st.plotly_chart(fig, use_container_width=True)
-
-
-
-
 
 
 # Count occurrences of each Main Product Group
@@ -96,9 +86,6 @@ chart = alt.Chart(group_counts).mark_bar().encode(
 
 # Display the Bar chart in Streamlit
 st.altair_chart(chart, use_container_width=True)
-
-
-##################################################################################################
 
 
 group_counts = df.groupby(['Nationality', 'Main Product Group']).size().reset_index(name='Count')
