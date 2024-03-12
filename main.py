@@ -3,20 +3,28 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import plotly.express as px
-
+from pandas import read_csv
+from pandas import DataFrame
 
 
 st.title("Supplier-List")
 
 
-#path = "C:\\Users\\Iliyah\\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\\ปี 3 เทอม 2\\intern\\BMW\\BMW\\Supplier-List.csv"
-
-
-
-
+#path = 'C:\Users\Iliyah\OneDrive - King Mongkut’s University of Technology Thonburi (KMUTT) (1)\ปี 3 เทอม 2\intern\BMW\BMW\Supplier-List.csv'
 # Read the CSV file
 #df = pd.read_csv('path')
+
 df = pd.read_csv("Supplier-List.csv" , encoding='utf-8')
+
+# Create a file uploader widget
+#file = st.file_uploader("Upload CSV file", type=['csv'])
+
+#while file is None:
+    #continue
+
+# Read the CSV file
+#df = pd.read_csv(file)
+
 
 # Display the DataFrame
 st.write(df)
@@ -99,11 +107,6 @@ chart = alt.Chart(group_counts).mark_bar().encode(
     width=600,
     height=400
 )
-
-# Display the Bar chart in Streamlit
-#st.altair_chart(chart, use_container_width=True)
-
-
 
 # Create Bar chart using Altair
 chart = alt.Chart(group_counts).mark_bar().encode(
