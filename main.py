@@ -63,7 +63,6 @@ fig = px.pie(country_counts, values='Count', names='Country RA', title='Number o
 # Display the pie chart in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
-###########################################################################################
 
 
 Nationality_counts = df['Nationality'].value_counts().reset_index()
@@ -74,6 +73,8 @@ fig = px.pie(Nationality_counts, values='Count', names='Nationality', title='Num
 
 # Display the pie chart in Streamlit
 st.plotly_chart(fig, use_container_width=True)
+
+
 
 
 
